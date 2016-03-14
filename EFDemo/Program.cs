@@ -19,6 +19,18 @@ namespace EFDemo
                 Console.WriteLine(category.CatName);
             }
 
+            //orders by find
+            Orders order = mb.Orders.FirstOrDefault(or => or.OrderID == 10248);
+            if (order != null)
+            {
+                foreach (Order_Details od in order.Order_Details)
+                {
+                    Console.WriteLine(od.Products.ProdName);
+                }
+            }
+            
+
+
             Console.ReadKey();
             //mb.Categories.Add("hello");
         }
