@@ -12,7 +12,12 @@ namespace EFDemo
         static void Main(string[] args)
         {
             ModelBooks mb = new ModelBooks();
-            IList<Categories> categories = mb.Categories.ToList();
+            IList<Categories> categories = mb.Categories.OrderBy(o => o.CatName).ToList();
+
+            foreach(Categories category in categories)
+            {
+                Console.WriteLine(category.CatName);
+            }
 
             Console.ReadKey();
             //mb.Categories.Add("hello");
