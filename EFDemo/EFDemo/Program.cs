@@ -31,9 +31,22 @@ namespace EFDemo
                 }
             }
 
+            /// demo part B
+            /// 
+            // fetching employees sorted by (or order by) City
+            // printing only [FirstName] [LastName] [Title] [BirthDate] [City] 
+            List<Employees> emp = mb.Employees.OrderBy(e => e.City).ToList();
 
+            if (emp != null)
+            {
+                Console.WriteLine("\n\n\n\n Printing demo part B");
+                foreach (Employees e in emp)
+                {
+                    Console.WriteLine(e.FirstName + "  " + e.LastName + "  " + e.Title);
+                    Console.WriteLine("{0} {1} {2} {3} {4} ", e.FirstName, e.LastName, e.Title, e.BirthDate, e.City);
+                }
+            }
             Console.ReadKey();
-            
         }
     }
 }
